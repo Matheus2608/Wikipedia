@@ -1,0 +1,19 @@
+{% extends "encyclopedia/layout.html" %}
+{% load static %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+<!--I dont know he is not using the styles from static :( -->
+{% block body %}
+    <form action="{% url 'create' %}" method="post">
+        {% csrf_token %}
+        <label for="title">Entry title:</label>
+        <input type="text" name="title" id="title"><br>
+        <label for="content">Content:</label><br>
+        <textarea style="height: 70vh;
+        width: 80%;" id="content" name="content">use markdown langague to enhance your content :)
+        </textarea>
+        <input type="submit" value="submit">
+    </form>
+{% endblock %}
